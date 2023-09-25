@@ -1,20 +1,27 @@
-#include <Wire.h> 
-#include <LiquidCrystal_I2C.h>
-
-// Set the LCD address to 0x27 for a 16 chars and 2 line display
+//Default set up and how to use 
+#include <Arduino.h>
+#include <Greek_LCD.h>
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-void setup()
-{
-	// initialize the LCD
-	lcd.begin();
 
-	// Turn on the blacklight and print a message.
-	lcd.backlight();
-	lcd.print("Hello, world!");
+void setup() {
+  lcd.init();
+  lcd.backlight():
+  createGreekChars(lcd);
+  
+}
+void loop(){
+  lcd.setCursor(0,0);
+  lcd.print("PRINT ENGLISH");
+  lcd.setCursor(0,1);
+  print_greek(lcd,"ΕΚΤΥΠΩΣΗ ΕΛΛΗΝΙΚΑ");
+  dealy(1500);
+  lcd.clear();
+  print_greek(lcd,"ΓΕΙΑ ΣΟΥ ΚΩΣΜΕ");
 }
 
-void loop()
-{
-	// Do nothing here...
-}
+
+
+
+
+
