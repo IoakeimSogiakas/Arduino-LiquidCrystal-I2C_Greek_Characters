@@ -1,6 +1,6 @@
 //YWROBOT
-#ifndef LiquidCrystal_I2C_h
-#define LiquidCrystal_I2C_h
+#ifndef LiquidCrystal_I2C_Greek_h
+#define LiquidCrystal_I2C_Greek_h
 
 #include <inttypes.h>
 #include "Print.h" 
@@ -55,9 +55,9 @@
 
 
 
-class LiquidCrystal_I2C : public Print {
+class LiquidCrystal_I2C_Greek : public Print {
 public:
-  LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows);
+  LiquidCrystal_I2C_Greek(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows);
   void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS );
   void clear();
   void home();
@@ -81,8 +81,8 @@ public:
   void noAutoscroll(); 
   void createChar(uint8_t, uint8_t[]);
   void createChar(uint8_t location, const char *charmap);
-  void createGreekChars(LiquidCrystal_I2C lcd);
-  void print_greek(LiquidCrystal_I2C lcd, unsigned char text[]);
+  void createGreekChars(LiquidCrystal_I2C_Greek lcd);
+  void print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]);
   // Example: 	const char bell[8] PROGMEM = {B00100,B01110,B01110,B01110,B11111,B00000,B00100,B00000};
   
   void setCursor(uint8_t, uint8_t); 
