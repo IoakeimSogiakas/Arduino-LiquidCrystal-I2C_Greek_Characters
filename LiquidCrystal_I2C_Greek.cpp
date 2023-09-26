@@ -51,7 +51,7 @@ byte Greek_Gamma[8] = {0x1F, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x00}; // Γ
 byte Greek_Delta[8] = {0x04, 0x0A, 0x0A, 0x11, 0x11, 0x11, 0x1F, 0x00}; // Δ
 
 #define G_THITA 2
-byte Greek_Thita[8] = {0x0E, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x11, 0x00}; // Θ
+byte Greek_Thita[8] = {0x0E, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x0E, 0x00}; // Θ
 
 #define G_LAMBDA 3
 byte Greek_Lambda[8] = {0x04, 0x0A, 0x0A, 0x1B, 0x11, 0x11, 0x11, 0x00}; // Λ
@@ -278,9 +278,9 @@ int i=0;
             break;           
             case 146: case 178:lcd.write('B');
             break;               
-            case 147: case 179:lcd.write(G_GAMMA);
+            case 147: case 179:lcd.write(G_GAMMA); // Issue
             break;
-            case 148: case 180:lcd.write(G_DELTA);
+            case 148: case 180:lcd.write(G_DELTA); // Issue
             break;             
             case 149: case 181: case 173:lcd.write('E');
             break;                  
@@ -288,7 +288,7 @@ int i=0;
             break;               
             case 151: case 183: case 174:lcd.write('H');
             break; 
-            case 152: case 184: lcd.write(G_THITA);
+            case 152: case 184: lcd.write(G_THITA); // Issue
             break;             
             case 153: case 185: case 175: case 144: case 138:lcd.write('I');
             break;             
