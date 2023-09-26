@@ -1,9 +1,9 @@
-
-#include <LiquidCrystal_I2C_Greek.h>
-#include <inttypes.h>
 #if defined(ARDUINO) && ARDUINO >= 100
 
 #include "Arduino.h"
+#include "LiquidCrystal_I2C_Greek.h"
+#include <inttypes.h>
+
 
 #define printIIC(args)	Wire.write(args)
 inline size_t LiquidCrystal_I2C_Greek::write(uint8_t value) {
@@ -43,36 +43,8 @@ inline void LiquidCrystal_I2C_Greek::write(uint8_t value) {
 // can't assume that its in that state when a sketch starts (and the
 // LiquidCrystal constructor is called).
 
-//Greek letters 
-#define G_GAMMA 0
-byte Greek_Gamma[8] = {0x1F, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x00}; // Γ
+//Greek 
 
-#define G_DELTA 1
-byte Greek_Delta[8] = {0x04, 0x0A, 0x0A, 0x11, 0x11, 0x11, 0x1F, 0x00}; // Δ
-
-#define G_THITA 2
-byte Greek_Thita[8] = {0x0E, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x0E, 0x00}; // Θ
-
-#define G_LAMBDA 3
-byte Greek_Lambda[8] = {0x04, 0x0A, 0x0A, 0x1B, 0x11, 0x11, 0x11, 0x00}; // Λ
-
-#define G_XI 4
-byte Greek_Xi[8] = {0x1F, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x1F, 0x00}; // Ξ
-
-#define G_PI 5
-byte Greek_Pi[8] = {0x1F, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x00}; // Π
-
-#define G_SIGMA 6
-byte Greek_Sigma[8] = {0x1F, 0x10, 0x08, 0x04, 0x08, 0x10, 0x1F, 0x00}; // Σ
-
-#define G_PHI 7
-byte Greek_Phi[8] = {0x0E, 0x15, 0x15, 0x15, 0x0E, 0x04, 0x04, 0x00}; // Φ
-
-#define G_PSI 8
-byte Greek_Psi[8] = {0x15, 0x15, 0x15, 0x0E, 0x04, 0x04, 0x04, 0x00}; // Ψ
-
-#define G_OMEGA 9
-byte Greek_Omega[8] = {0x0E, 0x11, 0x11, 0x11, 0x11, 0x0A, 0x1B, 0x00}; // Ω
 
 
 
@@ -254,22 +226,34 @@ void LiquidCrystal_I2C_Greek::createChar(uint8_t location, uint8_t charmap[]) {
 //Create greek characters 
 void LiquidCrystal_I2C_Greek::createGreekChars(LiquidCrystal_I2C_Greek lcd){
     lcd.clear();
-    lcd.createChar(G_GAMMA, Greek_Gamma);
-    lcd.createChar(G_DELTA, Greek_Delta);
-    lcd.createChar(G_THITA, Greek_Thita);
-    lcd.createChar(G_LAMBDA, Greek_Lambda);
-    lcd.createChar(G_XI, Greek_Xi);
-    lcd.createChar(G_PI, Greek_Pi);
-    lcd.createChar(G_SIGMA, Greek_Sigma);
-    lcd.createChar(G_PHI, Greek_Phi);
-    lcd.createChar(G_PSI, Greek_Psi);
-    lcd.createChar(G_OMEGA,Greek_Omega);
+lcd.createChar(G_GAMMA, Greek_Gamma); // Γ
+lcd.createChar(G_DELTA, Greek_Delta); // Δ
+lcd.createChar(G_THITA, Greek_Thita); // Θ
+lcd.createChar(G_LAMBDA, Greek_Lambda); // Λ
+lcd.createChar(G_XI, Greek_Xi); // Ξ
+lcd.createChar(G_PI, Greek_Pi); // Π
+//lcd.createChar(G_SIGMA, Greek_Sigma); // Σ
+lcd.createChar(G_PHI, Greek_Phi); // Χ
+lcd.createChar(G_PSI, Greek_Psi); // Ψ
+//lcd.createChar(G_OMEGA,Greek_Omega); // Ω
 }
 
 //Map greek characters
 void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]){
     
 int i=0;
+/*
+lcd.write(G_GAMMA);
+lcd.write(G_DELTA );
+lcd.write(G_THITA);
+lcd.write( G_LAMBDA);
+lcd.write( G_XI );
+lcd.write( G_PI);
+lcd.write( G_SIGMA );
+lcd.write( G_PHI);
+lcd.write(G_PSI );
+lcd.write( G_OMEGA);
+*/
 
     while(text[i]!='\0'){
          switch (text[i]){
@@ -278,9 +262,9 @@ int i=0;
             break;           
             case 146: case 178:lcd.write('B');
             break;               
-            case 147: case 179:lcd.write(G_GAMMA); // Issue probably
+            case 147: case 179:lcd.write(G_GAMMA);
             break;
-            case 148: case 180:lcd.write(G_DELTA); // Issue probably
+            case 148: case 180:lcd.write(G_DELTA); 
             break;             
             case 149: case 181: case 173:lcd.write('E');
             break;                  
@@ -322,9 +306,10 @@ int i=0;
             break; 
             case 169: case 137: case 142:lcd.write(G_OMEGA);
             break; 
-            default: lcd.write(text[i]);
-            //Serial.println(int(text[i]));  c++; break;              
+            default: lcd.write(text[i]);     
+                       
         }
+         //Serial.println(int(text[i]));  
         i++; 
     }
 }
