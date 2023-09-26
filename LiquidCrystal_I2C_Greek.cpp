@@ -278,9 +278,9 @@ int i=0;
             break;           
             case 146: case 178:lcd.write('B');
             break;               
-            case 147: case 179:lcd.write(G_GAMMA); // Issue
+            case 147: case 179:lcd.write(G_GAMMA); // Issue probably
             break;
-            case 148: case 180:lcd.write(G_DELTA); // Issue
+            case 148: case 180:lcd.write(G_DELTA); // Issue probably
             break;             
             case 149: case 181: case 173:lcd.write('E');
             break;                  
@@ -288,7 +288,7 @@ int i=0;
             break;               
             case 151: case 183: case 174:lcd.write('H');
             break; 
-            case 152: case 184: lcd.write(G_THITA); // Issue
+            case 152: case 184: lcd.write(G_THITA); // Issue probably
             break;             
             case 153: case 185: case 175: case 144: case 138:lcd.write('I');
             break;             
