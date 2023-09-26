@@ -52,6 +52,9 @@
 #define Rw B00000010  // Read/Write bit
 #define Rs B00000001  // Register select bit
 
+
+
+
 class LiquidCrystal_I2C : public Print {
 public:
   LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows);
@@ -78,7 +81,8 @@ public:
   void noAutoscroll(); 
   void createChar(uint8_t, uint8_t[]);
   void createChar(uint8_t location, const char *charmap);
-  // void creategreekchar();
+  void createGreekChars(LiquidCrystal_I2C lcd);
+  void print_greek(LiquidCrystal_I2C lcd, unsigned char text[]);
   // Example: 	const char bell[8] PROGMEM = {B00100,B01110,B01110,B01110,B11111,B00000,B00100,B00000};
   
   void setCursor(uint8_t, uint8_t); 
