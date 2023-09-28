@@ -98,20 +98,19 @@ public:
   void createGreekChars(LiquidCrystal_I2C_Greek lcd);
   void print_greek(LiquidCrystal_I2C_Greek lcd, const String& text);
   void print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]);
-  // Example: 	const char bell[8] PROGMEM={B00100,B01110,B01110,B01110,B11111,B00000,B00100,B00000,};
- //const char Greek_Gamma[8] PROGMEM={B11111, B10000, B10000, B10000, B10000, B10000, B10000, B00000}; // Γ
-
- byte Greek_Gamma[8]={B11111, B10000, B10000, B10000, B10000, B10000, B10000, B00000}; // Γ
- byte Greek_Delta[8]={B00100, B01010, B01010, B10001, B10001, B10001, B11111, B00000};  // Δ
- byte Greek_Thita[8] ={B01110, B10001, B10001, B11111, B10001, B10001, B01110, B00000}; // Θ
- byte Greek_Lambda[8] ={B00100, B01010, B01010, B10001, B10001, B10001, B10001, B00000}; // Λ
+  // Example: 	const char bell[8] PROGMEM= {B00100,B01110,B01110,B01110,B11111,B00000,B00100,B00000,};
+  
+ byte Greek_Gamma[8]  = {B11111, B10000, B10000, B10000, B10000, B10000, B10000, B00000}; // Γ
+ byte Greek_Delta[8]  = {B00100, B01010, B01010, B10001, B10001, B10001, B11111, B00000};  // Δ
+ byte Greek_Thita[8]  = {B01110, B10001, B10001, B11111, B10001, B10001, B01110, B00000}; // Θ
+ byte Greek_Lambda[8] = {B00100, B01010, B01010, B10001, B10001, B10001, B10001, B00000}; // Λ
  //
- byte Greek_Xi[8] ={B11111, B00000, B00000, B01110, B00000, B00000, B11111, B00000}; // Ξ
- byte Greek_Pi[8]={0x1F, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x00};  // Π
- byte Greek_Sigma[8] = {B11111, B01000, B00100, B00010, B00100, B01000, B11111, B00000};// Σ
- byte Greek_Phi[8]= {B00100, B01110, B10101, B10101, B10101, B01110, B00100, B00000};// Φ
- byte Greek_Psi[8] = {B10001, B10101, B10101, B10101, B01110, B00100, B00100, B00000}; // Ψ
- byte Greek_Omega[8]={B01110, B10001, B10001, B10001, B01010, B01010, B11011, B00000}; // Ω
+ byte Greek_Xi[8]     = {B11111, B00000, B00000, B01110, B00000, B00000, B11111, B00000}; // Ξ
+ byte Greek_Pi[8]     = {B11111, B10001, B10001, B10001, B10001, B10001, B10001, B00000};  // Π
+ byte Greek_Sigma[8]  = {B11111, B01000, B00100, B00010, B00100, B01000, B11111, B00000};// Σ
+ byte Greek_Phi[8]    = {B00100, B01110, B10101, B10101, B10101, B01110, B00100, B00000};// Φ
+ byte Greek_Psi[8]    = {B10001, B10101, B10101, B10101, B01110, B00100, B00100, B00000}; // Ψ
+ byte Greek_Omega[8]  = {B01110, B10001, B10001, B10001, B10001, B01010, B11011, B00000}; // Ω
   
   void setCursor(uint8_t, uint8_t); 
 #if defined(ARDUINO) && ARDUINO >= 100
