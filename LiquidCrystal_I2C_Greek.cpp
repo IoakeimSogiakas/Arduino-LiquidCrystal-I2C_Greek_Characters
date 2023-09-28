@@ -223,9 +223,10 @@ void LiquidCrystal_I2C_Greek::createChar(uint8_t location, uint8_t charmap[]) {
 		write(charmap[i]);
 	}
 }
+
 //Create greek characters 
 void LiquidCrystal_I2C_Greek::createGreekChars(LiquidCrystal_I2C_Greek lcd){
-    lcd.clear();
+lcd.clear();
 lcd.createChar(G_GAMMA, Greek_Gamma); // Γ
 lcd.createChar(G_DELTA, Greek_Delta); // Δ
 lcd.createChar(G_THITA, Greek_Thita); // Θ
@@ -313,6 +314,69 @@ lcd.write( G_OMEGA);
         i++; 
     }
 }
+
+//Map greek characters
+void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, const String& text){
+int len = text.length(); 
+	for (int i = 0; i < len; i++) {
+        unsigned char c = text.charAt(i);
+			switch (c){
+				case 206: case 127: case 207: break;               
+				case 145: case 177: case 172:lcd.write('A');
+				break;           
+				case 146: case 178:lcd.write('B');
+				break;               
+				case 147: case 179:lcd.write(G_GAMMA);
+				break;
+				case 148: case 180:lcd.write(G_DELTA); 
+				break;             
+				case 149: case 181: case 173:lcd.write('E');
+				break;                  
+				case 150: case 182: lcd.write('Z');
+				break;               
+				case 151: case 183: case 174:lcd.write('H');
+				break; 
+				case 152: case 184: lcd.write(G_THITA); // Issue probably
+				break;             
+				case 153: case 185: case 175: case 144: case 138:lcd.write('I');
+				break;             
+				case 154: case 186: lcd.write('K');
+				break;       
+				case 155: case 187:lcd.write(G_LAMBDA);
+				break;              
+				case 156: case 188: lcd.write('M');
+				break;               
+				case 157: case 189:lcd.write('N');
+				break;               
+				case 158: case 190:lcd.write(G_XI);
+				break;   
+				case 159: case 191: case 140:lcd.write('O');
+				break;                     
+				case 160: case 128:lcd.write(G_PI);
+				break; 
+				case 161: case 129:lcd.write('P');
+				break;  
+				case 163: case 131: case 130: lcd.write(G_SIGMA);
+				break; 
+				case 164: case 132:lcd.write('T');
+				break; 
+				case 165: case 133: case 141: case 139: case 176:lcd.write('Y');
+				break;                  
+				case 166: case 134: lcd.write(G_PHI);
+				break; 
+				case 167: case 135: lcd.write('X');
+				break;  
+				case 168: case 136: lcd.write(G_PSI);
+				break; 
+				case 169: case 137: case 142:lcd.write(G_OMEGA);
+				break; 
+				default: lcd.write(c);     
+						
+			}  
+    }
+}
+
+
 //createChar with PROGMEM input
 void LiquidCrystal_I2C_Greek::createChar(uint8_t location, const char *charmap) {
 	location &= 0x7; // we only have 8 locations 0-7
