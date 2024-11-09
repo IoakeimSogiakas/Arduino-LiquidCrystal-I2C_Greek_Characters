@@ -239,15 +239,16 @@ lcd.createChar(G_PSI, Greek_Psi); // Ψ
 //lcd.createChar(G_OMEGA,Greek_Omega); // Ω
 }
 
+
+
 //Map greek characters
-void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]){
-    
+void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]){ 
 int i=0;
     while(text[i]!='\0'){
          switch (text[i]){
             case 206: case 127: case 207: break;               
 			case 145:lcd.write('A');
-			break;
+			break;           
 			case 146:lcd.write('B');
 			break;
 			case 147:lcd.write(G_GAMMA); //Γ
@@ -362,6 +363,17 @@ int len = text.length();
     }
 }
 
+// Overload for handling int
+void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, int number) {
+    String str = String(number);  // Convert int to string
+    print_greek(lcd, str);        // Call the String overload
+}
+
+// Overload for long values
+void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, long number) {
+    String str = String(number);  // Convert long to string
+    print_greek(lcd, str);        // Call the String overload
+}
 
 //createChar with PROGMEM input
 void LiquidCrystal_I2C_Greek::createChar(uint8_t location, const char *charmap) {
