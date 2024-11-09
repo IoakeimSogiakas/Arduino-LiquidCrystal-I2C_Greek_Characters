@@ -233,7 +233,7 @@ lcd.createChar(G_THITA, Greek_Thita); // Θ
 lcd.createChar(G_LAMBDA, Greek_Lambda); // Λ
 lcd.createChar(G_XI, Greek_Xi); // Ξ
 lcd.createChar(G_PI, Greek_Pi); // Π
-//lcd.createChar(G_SIGMA, Greek_Sigma); // Σ
+lcd.createChar(G_SIGMA, Greek_Sigma); // Σ
 lcd.createChar(G_PHI, Greek_Phi); // Χ
 lcd.createChar(G_PSI, Greek_Psi); // Ψ
 //lcd.createChar(G_OMEGA,Greek_Omega); // Ω
@@ -243,70 +243,57 @@ lcd.createChar(G_PSI, Greek_Psi); // Ψ
 void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]){
     
 int i=0;
-/*
-lcd.write(G_GAMMA);
-lcd.write(G_DELTA );
-lcd.write(G_THITA);
-lcd.write( G_LAMBDA);
-lcd.write( G_XI );
-lcd.write( G_PI);
-lcd.write( G_SIGMA );
-lcd.write( G_PHI);
-lcd.write(G_PSI );
-lcd.write( G_OMEGA);
-*/
-
     while(text[i]!='\0'){
          switch (text[i]){
             case 206: case 127: case 207: break;               
-            case 145: case 177: case 172:lcd.write('A');
-            break;           
-            case 146: case 178:lcd.write('B');
-            break;               
-            case 147: case 179:lcd.write(G_GAMMA);
-            break;
-            case 148: case 180:lcd.write(G_DELTA); 
-            break;             
-            case 149: case 181: case 173:lcd.write('E');
-            break;                  
-            case 150: case 182: lcd.write('Z');
-            break;               
-            case 151: case 183: case 174:lcd.write('H');
-            break; 
-            case 152: case 184: lcd.write(G_THITA); // Issue probably
-            break;             
-            case 153: case 185: case 175: case 144: case 138:lcd.write('I');
-            break;             
-            case 154: case 186: lcd.write('K');
-            break;       
-            case 155: case 187:lcd.write(G_LAMBDA);
-            break;              
-            case 156: case 188: lcd.write('M');
-            break;               
-            case 157: case 189:lcd.write('N');
-            break;               
-            case 158: case 190:lcd.write(G_XI);
-            break;   
-            case 159: case 191: case 140:lcd.write('O');
-            break;                     
-            case 160: case 128:lcd.write(G_PI);
-            break; 
-            case 161: case 129:lcd.write('P');
-            break;  
-            case 163: case 131: case 130: lcd.write(G_SIGMA);
-            break; 
-            case 164: case 132:lcd.write('T');
-            break; 
-            case 165: case 133: case 141: case 139: case 176:lcd.write('Y');
-            break;                  
-            case 166: case 134: lcd.write(G_PHI);
-            break; 
-            case 167: case 135: lcd.write('X');
-            break;  
-            case 168: case 136: lcd.write(G_PSI);
-            break; 
-            case 169: case 137: case 142:lcd.write(G_OMEGA);
-            break; 
+			case 145:lcd.write('A');
+			break;
+			case 146:lcd.write('B');
+			break;
+			case 147:lcd.write(G_GAMMA); //Γ
+			break;
+			case 148:lcd.write(G_DELTA); //Δ 
+			break;
+			case 149:lcd.write('E');
+			break;
+			case 150:lcd.write('Z');
+			break;
+			case 151:lcd.write('H');
+			break;
+			case 152:lcd.write(G_THITA); //Θ
+			break;
+			case 153:lcd.write('I');
+			break;
+			case 154:lcd.write('K');
+			break;
+			case 155:lcd.write(G_LAMBDA); //Λ
+			break;
+			case 156:lcd.write('M');
+			break;
+			case 157:lcd.write('N');
+			break;
+			case 158:lcd.write(G_XI); //Ξ
+			break;
+			case 159:lcd.write('O');
+			break;
+			case 160:lcd.write(G_PI); //Π
+			break; 
+			case 161:lcd.write('P');
+			break;
+			case 163:lcd.write(G_SIGMA); //Σ
+			break;
+			case 164:lcd.write('T');
+			break;
+			case 165:lcd.write('Y');
+			break;
+			case 166:lcd.write(G_PHI); //Φ
+			break;
+			case 167:lcd.write('X');
+			break;
+			case 168:lcd.write(G_PSI); //Ψ
+			break;
+			case 169:lcd.write(G_OMEGA); //Ω
+			break;
             default: lcd.write(text[i]);     
                        
         }
@@ -322,56 +309,55 @@ int len = text.length();
         unsigned char c = text.charAt(i);
 			switch (c){
 				case 206: case 127: case 207: break;               
-				case 145: case 177: case 172:lcd.write('A');
-				break;           
-				case 146: case 178:lcd.write('B');
-				break;               
-				case 147: case 179:lcd.write(G_GAMMA);
+				case 145:lcd.write('A');
 				break;
-				case 148: case 180:lcd.write(G_DELTA); 
-				break;             
-				case 149: case 181: case 173:lcd.write('E');
-				break;                  
-				case 150: case 182: lcd.write('Z');
-				break;               
-				case 151: case 183: case 174:lcd.write('H');
-				break; 
-				case 152: case 184: lcd.write(G_THITA); // Issue probably
-				break;             
-				case 153: case 185: case 175: case 144: case 138:lcd.write('I');
-				break;             
-				case 154: case 186: lcd.write('K');
-				break;       
-				case 155: case 187:lcd.write(G_LAMBDA);
-				break;              
-				case 156: case 188: lcd.write('M');
-				break;               
-				case 157: case 189:lcd.write('N');
-				break;               
-				case 158: case 190:lcd.write(G_XI);
-				break;   
-				case 159: case 191: case 140:lcd.write('O');
-				break;                     
-				case 160: case 128:lcd.write(G_PI);
-				break; 
-				case 161: case 129:lcd.write('P');
-				break;  
-				case 163: case 131: case 130: lcd.write(G_SIGMA);
-				break; 
-				case 164: case 132:lcd.write('T');
-				break; 
-				case 165: case 133: case 141: case 139: case 176:lcd.write('Y');
-				break;                  
-				case 166: case 134: lcd.write(G_PHI);
-				break; 
-				case 167: case 135: lcd.write('X');
-				break;  
-				case 168: case 136: lcd.write(G_PSI);
-				break; 
-				case 169: case 137: case 142:lcd.write(G_OMEGA);
-				break; 
-				default: lcd.write(c);     
-						
+				case 146:lcd.write('B');
+				break;
+				case 147:lcd.write(G_GAMMA); //Γ
+				break;
+				case 148:lcd.write(G_DELTA); //Δ 
+				break;
+				case 149:lcd.write('E');
+				break;
+				case 150:lcd.write('Z');
+				break;
+				case 151:lcd.write('H');
+				break;
+				case 152:lcd.write(G_THITA); //Θ
+				break;
+				case 153:lcd.write('I');
+				break;
+				case 154:lcd.write('K');
+				break;
+				case 155:lcd.write(G_LAMBDA); //Λ
+				break;
+				case 156:lcd.write('M');
+				break;
+				case 157:lcd.write('N');
+				break;
+				case 158:lcd.write(G_XI); //Ξ
+				break;
+				case 159:lcd.write('O');
+				break;
+				case 160:lcd.write(G_PI); //Π
+				break;
+				case 161:lcd.write('P');
+				break;
+				case 163:lcd.write(G_SIGMA); //Σ
+				break;
+				case 164:lcd.write('T');
+				break;
+				case 165:lcd.write('Y');
+				break;
+				case 166:lcd.write(G_PHI); //Φ
+				break;
+				case 167:lcd.write('X');
+				break;
+				case 168:lcd.write(G_PSI); //Ψ
+				break;
+				case 169:lcd.write(G_OMEGA); //Ω
+				break;
+				default: lcd.write(c);						
 			}  
     }
 }
