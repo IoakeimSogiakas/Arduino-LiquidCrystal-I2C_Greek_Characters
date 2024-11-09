@@ -96,6 +96,8 @@ class LiquidCrystal_I2C_Greek: public Print {
   void print_greek(LiquidCrystal_I2C_Greek lcd,
     const String & text);
   void print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]);
+  void print_greek(LiquidCrystal_I2C_Greek lcd, int number);
+  void print_greek(LiquidCrystal_I2C_Greek lcd, long number);
   // Example: 	const char bell[8] PROGMEM= {B00100,B01110,B01110,B01110,B11111,B00000,B00100,B00000,};
 
   byte Greek_Gamma  [8] = {B11111, B10000, B10000, B10000, B10000, B10000, B10000, B00000}; // Γ
