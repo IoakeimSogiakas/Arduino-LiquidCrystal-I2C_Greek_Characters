@@ -8,7 +8,7 @@
 
 #include <Wire.h>
 
-
+//Don't Change This It breakes
 #define G_GAMMA 0
 #define G_DELTA 1
 #define G_THITA 2
@@ -95,11 +95,15 @@ class LiquidCrystal_I2C_Greek: public Print {
   void createGreekChars(LiquidCrystal_I2C_Greek lcd);
   void print_greek(LiquidCrystal_I2C_Greek lcd,
     const String & text);
-  void print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]);
-  void print_greek(LiquidCrystal_I2C_Greek lcd, int number);
-  void print_greek(LiquidCrystal_I2C_Greek lcd, long number);
-  // Example: 	const char bell[8] PROGMEM= {B00100,B01110,B01110,B01110,B11111,B00000,B00100,B00000,};
 
+
+  //Greek stuff
+  void print_greek(LiquidCrystal_I2C_Greek lcd, unsigned char text[]); //Main Greek thing
+  void print_greek(LiquidCrystal_I2C_Greek lcd, int number);      // Overload for handling int
+  void print_greek(LiquidCrystal_I2C_Greek lcd, long number);     // Overload for long values
+  void print_greek(LiquidCrystal_I2C_Greek lcd, uint8_t number);  // Overload for uint8_t values
+  void print_greek(LiquidCrystal_I2C_Greek lcd, uint16_t number); // Overload for uint16_t values
+  void print_greek(LiquidCrystal_I2C_Greek lcd, uint32_t number); // Overload for uint32_t values
   byte Greek_Gamma  [8] = {B11111, B10000, B10000, B10000, B10000, B10000, B10000, B00000}; // Γ
   byte Greek_Delta  [8] = {B00100, B01010, B01010, B10001, B10001, B10001, B11111, B00000};  // Δ
   byte Greek_Thita  [8] = {B01110, B10001, B10001, B11111, B10001, B10001, B01110, B00000}; // Θ
@@ -110,6 +114,8 @@ class LiquidCrystal_I2C_Greek: public Print {
   byte Greek_Phi    [8] = {B00100, B01110, B10101, B10101, B10101, B01110, B00100, B00000};// Φ
   byte Greek_Psi    [8] = {B10001, B10101, B10101, B10101, B01110, B00100, B00100, B00000}; // Ψ
   byte Greek_Omega  [8] = {B01110, B10001, B10001, B10001, B10001, B01010, B11011, B00000}; // Ω
+  
+  
   void setCursor(uint8_t, uint8_t);
   #if defined(ARDUINO) && ARDUINO >= 100
   virtual size_t write(uint8_t);
