@@ -375,6 +375,24 @@ void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, long numb
     print_greek(lcd, str);        // Call the String overload
 }
 
+// Overload for uint8_t values
+void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, uint8_t number) {
+    // Call the existing print_greek overload for int or long
+    print_greek(lcd, (int)number);
+}
+
+// Overload for uint16_t values
+void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, uint16_t number) {
+    // Call the existing print_greek overload for int or long
+    print_greek(lcd, (int)number);
+}
+
+// Overload for uint32_t values
+void LiquidCrystal_I2C_Greek::print_greek(LiquidCrystal_I2C_Greek lcd, uint32_t number) {
+    // Call the existing print_greek overload for int or long
+    print_greek(lcd, (int)number);
+}
+
 //createChar with PROGMEM input
 void LiquidCrystal_I2C_Greek::createChar(uint8_t location, const char *charmap) {
 	location &= 0x7; // we only have 8 locations 0-7
