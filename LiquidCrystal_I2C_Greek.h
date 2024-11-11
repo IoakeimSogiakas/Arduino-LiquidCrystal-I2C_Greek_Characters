@@ -11,14 +11,14 @@
 //Don't Change This It breakes
 #define G_GAMMA 0
 #define G_DELTA 1
-#define G_THITA 2
+#define G_THITA 242
 #define G_LAMBDA 3
 #define G_XI 4
 #define G_PI 5
 #define G_SIGMA 246
 #define G_PHI 6
 #define G_PSI 7
-#define G_OMEGA 244
+#define G_OMEGA 2
 
 // commands
 #define LCD_CLEARDISPLAY 0x01
