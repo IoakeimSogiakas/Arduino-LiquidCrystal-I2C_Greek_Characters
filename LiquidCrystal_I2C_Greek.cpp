@@ -226,17 +226,16 @@ void LiquidCrystal_I2C_Greek::createChar(uint8_t location, uint8_t charmap[]) {
 
 //Create greek characters 
 void LiquidCrystal_I2C_Greek::createGreekChars(LiquidCrystal_I2C_Greek lcd){
-lcd.clear();
 lcd.createChar(G_GAMMA, Greek_Gamma); // Γ
 lcd.createChar(G_DELTA, Greek_Delta); // Δ
-lcd.createChar(G_THITA, Greek_Thita); // Θ
+// lcd.createChar(G_THITA, Greek_Thita); // Θ
 lcd.createChar(G_LAMBDA, Greek_Lambda); // Λ
 lcd.createChar(G_XI, Greek_Xi); // Ξ
 lcd.createChar(G_PI, Greek_Pi); // Π
-lcd.createChar(G_SIGMA, Greek_Sigma); // Σ
+// lcd.createChar(G_SIGMA, Greek_Sigma); // Σ
 lcd.createChar(G_PHI, Greek_Phi); // Χ
 lcd.createChar(G_PSI, Greek_Psi); // Ψ
-//lcd.createChar(G_OMEGA,Greek_Omega); // Ω
+lcd.createChar(G_OMEGA,Greek_Omega); // Ω
 }
 
 
