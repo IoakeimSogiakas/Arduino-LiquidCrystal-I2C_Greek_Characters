@@ -1,1 +1,1 @@
-{"type": "library", "name": "LiquidCrystal_I2C_Greek_Characters", "version": "1.1.0", "spec": {"owner": "ioakeimsogiakas", "id": 16074, "name": "LiquidCrystal_I2C_Greek_Characters", "requirements": null, "uri": null}}
+{"type": "library", "name": "LiquidCrystal_I2C_Greek_Characters", "version": "3.1.5", "spec": {"owner": "ioakeimsogiakas", "id": 16074, "name": "LiquidCrystal_I2C_Greek_Characters", "requirements": null, "uri": null}}
